@@ -19,9 +19,9 @@ def main(spark, userID):
 
     # Load the boats.txt and sailors.json data into DataFrame
     ratings = spark.read.csv(f'hdfs:/user/{userID}/ml-latest/ratings.csv', header = True, schema='userId INT, movieId string, rating FLOAT, timestamp INT')
-    # movies = spark.read.csv(f'hdfs:/user/{userID}/ml-latest-small/movies.csv')
-    # links = spark.read.csv(f'hdfs:/user/{userID}/ml-latest-small/links.csv')
-    # tags = spark.read.csv(f'hdfs:/user/{userID}/ml-latest-small/tags.csv')
+    # movies = spark.read.csv(f'hdfs:/user/{userID}/ml-latest/movies.csv')
+    # links = spark.read.csv(f'hdfs:/user/{userID}/ml-latest/links.csv')
+    # tags = spark.read.csv(f'hdfs:/user/{userID}/ml-latest/tags.csv')
     
     print('Printing ratings with specified schema')
     ratings.printSchema()
